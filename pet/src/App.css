@@ -1,3 +1,21 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('/static/Inter-Regular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/static/Inter-Light.ttf');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/static/Inter-Bold.ttf');
+  font-weight: 800;
+}
+
 .App {
   text-align: center;
 }
@@ -28,22 +46,23 @@
 }
  body{
   background-color: rgba(19, 19, 19, 1);
+  font-family: 'Inter';
  }
 
- .card{
-  background-color: rgba(173, 244, 20, 1);
-  color: rgba(29, 29, 29, 1);
-  height: 40%;
-  width: 32%;
-  border-radius: 30px;
-  padding: 2%;
-  text-align: justify;
-  box-shadow: 0 0 40px 7px rgba(173, 244, 20, 1);
-  margin: 9% 7%;
+ .text{
+  opacity: 0;
+  animation: text-vision 2s; 
+  animation-delay: 3s;
+  animation-fill-mode: forwards ;
  }
+
  .card-img{
   width: 32%;
   margin-right: 7%;
+  position:absolute;
+  margin-left: 60%;
+  margin-top: 5%;
+  animation: img-size 4s;
  }
  
  .first-line{
@@ -62,9 +81,112 @@
   justify-content: center;
   align-items: center;
   margin-left: 18%;
+  
  }
  .resume-button:hover{
   color:rgba(255, 255, 255, 0.4);
   border-color: rgba(255, 255, 255, 0.2);
-  transition: 0.15s ease;
+  transition: 0.5s ease;
+  cursor: pointer;
  }
+ .contacts{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 3%;
+  margin-left: -5%;
+  gap: 15%;
+  color:  rgba(255, 255, 255, 1);
+ }
+ a:visited{
+  color:  rgba(255, 255, 255, 0.5);
+ }
+
+ hr{
+  margin-top: 5%;
+  width: 90%;
+  border-color: rgba(255, 255, 255, 0.3);;
+ }
+
+ .contacts .p{
+  color:  rgba(255, 255, 255, 0.3);
+ }
+
+a{
+text-decoration: none;
+color:  rgba(255, 255, 255, 1);
+}
+
+a:hover{
+  color:  rgba(255, 255, 255, 0.4);
+  transition: 0.5s ease;
+}
+
+ .box {
+  text-align: justify;
+  margin: 9% 7%;
+  padding: 2%;
+  border-radius: 20px;
+  height: 40%;
+  width: 32%;
+  line-height: 26px;
+  background:rgba(173, 244, 20, 1);
+  animation: anime 3s cubic-bezier(0.16, 1, 0.3, 1);
+  animation-fill-mode: forwards;
+}
+
+@keyframes anime {
+  0% {
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    background:rgba(173, 244, 20, 1);
+    box-shadow: 0px 1px 40px 15px rgba(173, 244, 20, 1),
+                 0 0 0 rgba(173, 244, 20, 1),
+                  10px 10px 10px rgba(173, 244, 20, 1) inset,
+                  -40px -40px 10px rgba(173, 244, 20, 1) inset;
+  }
+  25% {
+    width: 10px;
+    height: 10px;
+    background:rgba(173, 244, 20, 1);
+    box-shadow:  0px 1px 40px 15px rgba(173, 244, 20, 1),
+                 10px 10px 10px rgba(173, 244, 20, 1),
+                 0 0 0 rgba(173, 244, 20, 1) inset,
+                 0 0 0 rgba(173, 244, 20, 1) inset;
+  }
+  50% {
+    width: 60px;
+    height: 240px;
+    background: rgba(173, 244, 20, 1);
+    box-shadow:  0px 1px 40px 15px rgba(173, 244, 20, 1),
+                 10px 10px 10px rgba(173, 244, 20, 1),
+                 0 0 0 rgba(173, 244, 20, 1) inset,
+                 0 0 0 rgba(173, 244, 20, 1) inset;
+  }
+  100% {
+    width: 480px;
+    height: 240px;
+    background: rgba(173, 244, 20, 1);
+    box-shadow:  0px 1px 40px 15px rgba(173, 244, 20, 1), 
+                 0 0 0 rgba(173, 244, 20, 1), 
+                 0 0 0 rgba(173, 244, 20, 1) inset, 
+                 0px 0px 0px rgba(173, 244, 20, 1) inset;
+    }
+}
+@keyframes text-vision{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+@keyframes img-size {
+  from{
+    width: 2%;
+  }
+  to{
+    width: 32%;
+  }
+}

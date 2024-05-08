@@ -65,6 +65,10 @@
   animation: img-size 4s;
  }
  
+ .arrow{
+display: none;
+ }
+
  .first-line{
   display: flex;
   justify-content: space-between;
